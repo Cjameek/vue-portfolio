@@ -95,6 +95,7 @@ export default {
 
       &--link {
         color: var(--color-dark);
+        font-family: 'Lato', sans-serif;
         font-size: 20px;
         font-weight: 700;
         letter-spacing: 1.12px;
