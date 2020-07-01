@@ -89,6 +89,23 @@ a {
   color: #42b983;
 }
 
+.button,
+button[type="button"]{
+  background: var(--color-red);
+  border: 2px solid transparent;
+  border-radius: .5rem;
+  padding: 1.2rem 2.4rem;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.12px;
+
+  &.secondary {
+    background: transparent;
+    border-color: var(--color-red);
+  }
+}
+
 html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
