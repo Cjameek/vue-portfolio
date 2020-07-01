@@ -21,10 +21,12 @@ export default {
 :root {
   --color-light: #eeeeee;
   --color-dark: #040F16;
-  --color-red: #D64933;
+  --color-red: #C83D28;
   --color-blue: #5171A5;
   --color-yellow: #FFCF99;
   --color-green: #E4F1E6;
+  --font-body: 'Roboto', sans-serif;
+  --font-heading: 'Lato', sans-serif;
 }
 
 #app {
