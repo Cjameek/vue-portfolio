@@ -11,6 +11,13 @@ export default {
   name: "App",
   components: {
     HelloWorld
+  },
+  mounted() {
+    return {
+      getPrismicPosts: function() {
+        console.log(process.env.VUE_APP_PRISMIC_API_URL);
+      }
+    }
   }
 };
 </script>
