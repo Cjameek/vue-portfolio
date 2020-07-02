@@ -6,30 +6,11 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-import axios from "axios";
 
 export default {
   name: "App",
   components: {
     HelloWorld
-  },
-  data() {
-    return {
-      posts: []
-    }
-  },
-  methods: {
-    getPrismicPosts: function() {
-      const apiURL = process.env.VUE_APP_PRISMIC_API_URL + "ref=" + process.env.VUE_APP_PRISMIC_REF;
-
-      axios.get(apiURL).then( response => {
-        const allPosts = response.data;
-        this.posts.push(allPosts);
-      });
-    }
-  },
-  mounted() {
-    this.getPrismicPosts();
   }
 };
 </script>
@@ -39,11 +20,11 @@ export default {
 
 :root {
   --color-light: #eeeeee;
-  --color-dark: #040F16;
-  --color-red: #C83D28;
-  --color-blue: #5171A5;
-  --color-yellow: #FFCF99;
-  --color-green: #E4F1E6;
+  --color-dark: #040f16;
+  --color-red: #c83d28;
+  --color-blue: #5171a5;
+  --color-yellow: #ffcf99;
+  --color-green: #e4f1e6;
   --font-body: "Roboto", sans-serif;
   --font-heading: "Lato", sans-serif;
 }
@@ -55,7 +36,13 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-h1,h2,h3,h4,h5,h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Lato", sans-serif;
   font-weight: 900;
 }
