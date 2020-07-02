@@ -6,24 +6,36 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import axios from "axios";
 
 export default {
   name: "App",
   components: {
     HelloWorld
   },
-  mounted() {
+  data() {
     return {
-      getPrismicPosts: function() {
-        console.log(process.env.VUE_APP_PRISMIC_API_URL);
-      }
+      posts: []
     }
+  },
+  methods: {
+    getPrismicPosts: function() {
+      const apiURL = process.env.VUE_APP_PRISMIC_API_URL + "ref=" + process.env.VUE_APP_PRISMIC_REF;
+
+      axios.get(apiURL).then( response => {
+        const allPosts = response.data;
+        this.posts.push(allPosts);
+      });
+    }
+  },
+  mounted() {
+    this.getPrismicPosts();
   }
 };
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,900&family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,900&family=Roboto:wght@400;700&display=swap");
 
 :root {
   --color-light: #eeeeee;
@@ -32,19 +44,19 @@ export default {
   --color-blue: #5171A5;
   --color-yellow: #FFCF99;
   --color-green: #E4F1E6;
-  --font-body: 'Roboto', sans-serif;
-  --font-heading: 'Lato', sans-serif;
+  --font-body: "Roboto", sans-serif;
+  --font-heading: "Lato", sans-serif;
 }
 
 #app {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 900;
 }
 
