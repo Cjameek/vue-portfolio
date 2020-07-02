@@ -2,7 +2,7 @@
   <div class="hello">
     <Header />
     <h1>{{ msg }}</h1>
-    <button type="button" @click="getPrismicContent">Get content</button>
+    <button type="button">Get content</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -49,6 +49,7 @@
 <script>
 import Header from "./Header";
 import Footer from "./Footer";
+import axios from "axios";
 
 export default {
   components: {
@@ -61,13 +62,30 @@ export default {
   },
   data() {
     return {
-      content: []
-    }
+      posts: [],
+      errors: []
+    };
   },
   methods: {
-    getPrismicContent: function() {
-      this.content.push("item");
+    getPrismicPosts: function() {
+      const apiURL =
+        process.env.VUE_APP_PRISMIC_API_URL +
+        "ref=" +
+        process.env.VUE_APP_PRISMIC_REF;
+
+      axios
+        .get(apiURL)
+        .then(response => {
+          const allPosts = response.data;
+          this.posts = allPosts;
+        })
+        .catch(e => {
+          this.errors.push(e);
+        });
     }
+  },
+  mounted() {
+    this.getPrismicPosts();
   }
 };
 </script>
@@ -90,13 +108,13 @@ a {
 }
 
 .button,
-button[type="button"]{
+button[type="button"] {
   background: var(--color-red);
   border: 2px solid transparent;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 1.2rem 2.4rem;
   color: #fff;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 700;
   letter-spacing: 1.12px;
 
@@ -228,7 +246,7 @@ samp {
 }
 
 figure {
-    margin: 1em 40px;
+  margin: 1em 40px;
 }
 
 hr {
