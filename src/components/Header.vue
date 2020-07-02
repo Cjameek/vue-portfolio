@@ -5,8 +5,16 @@
     </figure>
     <nav class="header__navigation">
       <ul class="header__navigation_menu">
-        <li class="header__navigation_menu-item" v-for="item in navItems" :key="item.name">
-          <a class="header__navigation_menu-item--link" :href="createItemLink(item.name)">{{ item.name }}</a>
+        <li
+          class="header__navigation_menu-item"
+          v-for="item in navItems"
+          :key="item.name"
+        >
+          <a
+            class="header__navigation_menu-item--link"
+            :href="createItemLink(item.name)"
+            >{{ item.name }}</a
+          >
         </li>
       </ul>
     </nav>
@@ -20,26 +28,26 @@ export default {
     return {
       navItems: [
         {
-          name: 'About'
+          name: "About"
         },
         {
-          name: 'Experience'
+          name: "Experience"
         },
         {
-          name: 'Projects'
+          name: "Projects"
         },
         {
-          name: 'Contact'
-        },
+          name: "Contact"
+        }
       ]
-    }
+    };
   },
   methods: {
     createItemLink: function(id) {
-      return '#' + id.toLowerCase();
+      return "#" + id.toLowerCase();
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -66,7 +74,7 @@ export default {
   // }
 
   &:after {
-    content: '';
+    content: "";
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23FFCF99' fill-opacity='1' d='M0,128L1440,192L1440,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
     background-position: left;
     background-repeat: no-repeat;
@@ -95,7 +103,7 @@ export default {
 
       &--link {
         color: var(--color-dark);
-        font-family: 'Lato', sans-serif;
+        font-family: "Lato", sans-serif;
         font-size: 20px;
         font-weight: 700;
         letter-spacing: 1.12px;
