@@ -56,13 +56,15 @@ export default {
     Header,
     Footer
   },
-  name: "HelloWorld",
+  name: "Main",
   props: {
     msg: String
   },
   data() {
     return {
       posts: [],
+      totalPages: 1,
+      currentPage: 1,
       errors: []
     };
   },
@@ -77,7 +79,10 @@ export default {
         .get(apiURL)
         .then(response => {
           const allPosts = response.data;
-          this.posts = allPosts;
+          // Update post information
+          this.posts = allPosts.results;
+          this.totalPages = allPosts.total_pages;
+          this.currentPage = allPosts.page;
         })
         .catch(e => {
           this.errors.push(e);
