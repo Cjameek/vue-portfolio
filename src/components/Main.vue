@@ -1,11 +1,9 @@
 <template>
-  <div class="hello">
+  <main class="primary-content">
     <Header />
-    <h1>{{ msg }}</h1>
-    <button type="button">Get content</button>
 
     <Footer />
-  </div>
+  </main>
 </template>
 
 <script>
@@ -35,7 +33,8 @@ export default {
       const apiURL =
         process.env.VUE_APP_PRISMIC_API_URL +
         "ref=" +
-        process.env.VUE_APP_PRISMIC_REF;
+        process.env.VUE_APP_PRISMIC_REF +
+        '&q=[[at(document.type, "page")]]';
 
       axios
         .get(apiURL)
@@ -76,8 +75,7 @@ a {
   color: #42b983;
 }
 
-.button,
-button[type="button"] {
+.button {
   background: var(--color-red);
   border: 2px solid transparent;
   border-radius: 0.5rem;
