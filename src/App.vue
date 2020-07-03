@@ -18,15 +18,12 @@ export default {
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,900&family=Roboto:wght@400;700&display=swap");
 
-:root {
-  --color-light: #eeeeee;
-  --color-dark: #040f16;
-  --color-red: #c83d28;
-  --color-blue: #5171a5;
-  --color-yellow: #ffcf99;
-  --color-green: #e4f1e6;
-  --font-body: "Roboto", sans-serif;
-  --font-heading: "Lato", sans-serif;
+html {
+  font-size: 62.5%; /* 10px browser default */
+}
+
+body {
+  font-size: 16px;
 }
 
 #app {
