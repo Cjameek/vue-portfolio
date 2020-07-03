@@ -8,6 +8,7 @@
           class="footer__scroll--button"
           @click="scrollBackToTop"
         >
+          <span class="icon-next" aria-hidden="true"></span>
           Back to Top
         </button>
       </div>
