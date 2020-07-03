@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss">
 .header {
-  background-color: var(--color-yellow);
+  background-color: #fff;
   display: flex;
   position: relative;
   margin-bottom: 7.4rem;
@@ -75,7 +75,7 @@ export default {
 
   &:after {
     content: "";
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23FFCF99' fill-opacity='1' d='M0,128L1440,192L1440,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23FFFFFF' fill-opacity='1' d='M0,128L1440,192L1440,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
