@@ -13,29 +13,6 @@ export default {
   name: "Header",
   components: {
     Navigation
-  },
-  data() {
-    return {
-      navItems: [
-        {
-          name: "About"
-        },
-        {
-          name: "Experience"
-        },
-        {
-          name: "Projects"
-        },
-        {
-          name: "Contact"
-        }
-      ]
-    };
-  },
-  methods: {
-    createItemLink: function(id) {
-      return "#" + id.toLowerCase();
-    }
   }
 };
 </script>
