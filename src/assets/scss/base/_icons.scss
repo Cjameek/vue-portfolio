@@ -1,6 +1,5 @@
 @font-face {
     font-family: #{$icons-font-family};
-    src:  url('');
     src:  url('#{$icons-font-path}/#{$icons-font-family}.eot?4cr9p7#iefix') format('embedded-opentype'),
         url('#{$icons-font-path}/#{$icons-font-family}.ttf?4cr9p7') format('truetype'),
         url('#{$icons-font-path}/#{$icons-font-family}.woff?4cr9p7') format('woff'),
