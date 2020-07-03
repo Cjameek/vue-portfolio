@@ -1,7 +1,18 @@
+// CSS Variables
+:root {
+    --color-light: #eeeeee;
+    --color-dark: #040f16;
+    --color-red: #c83d28;
+    --color-blue: #5171a5;
+    --color-yellow: #ffcf99;
+    --color-green: #e4f1e6;
+    --font-body: "Roboto", sans-serif;
+    --font-heading: "Lato", sans-serif;
+}
 
 // Font vars
 $icons-font-family: 'icons' !default;;
-$icons-font-path: 'fonts/icomoon$eot?4cr9p7' !default;
+$icons-font-path: '../assets/fonts' !default;
 
 $icon-linkedin: '\e904';
 $icon-search: '\e902';
