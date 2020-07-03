@@ -3,14 +3,14 @@
     <ul class="header__navigation_menu">
       <li
         class="header__navigation_menu-item"
-        v-for="item in navItems"
+        :for="item in navItems"
         :key="item.name"
       >
-        <a
+        <!-- <a
           class="header__navigation_menu-item--link"
           :href="createItemLink(item.name)"
           >{{ item.name }}</a
-        >
+        > -->
       </li>
     </ul>
   </nav>
