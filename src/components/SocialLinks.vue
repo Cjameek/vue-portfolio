@@ -51,4 +51,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+@import "../assets/scss/components/_social-links.scss";
+</style>
