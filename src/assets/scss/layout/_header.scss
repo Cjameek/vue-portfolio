@@ -4,6 +4,12 @@
     position: relative;
     margin-bottom: 7.4rem;
     padding: 1.5rem 3rem;
+
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+    top: 0;
+    left: 0;
   
     // &:before {
     //   content: '';
