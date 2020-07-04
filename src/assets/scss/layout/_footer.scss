@@ -4,7 +4,14 @@
     padding: 1.5rem 3rem;
     color: #fff;
 
+    &__copy {
+        font-size: 14px;
+        text-align: left;
+    }
+
     &__scroll {
+        text-align: right;
+        
         &--button {
             background-color: var(--color-red);
             display: inline-flex;
