@@ -1,19 +1,21 @@
 <template>
   <main class="primary-content">
     <Header />
-
+    <Hero />
     <Footer />
   </main>
 </template>
 
 <script>
 import Header from "./Header";
+import Hero from "./Hero";
 import Footer from "./Footer";
 import axios from "axios";
 
 export default {
   components: {
     Header,
+    Hero,
     Footer
   },
   name: "Main",
@@ -59,35 +61,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 @import "../assets/scss/style.scss";
-
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-
-.button {
-  background: var(--color-red);
-  border: 2px solid transparent;
-  border-radius: 0.5rem;
-  padding: 1.2rem 2.4rem;
-  color: #fff;
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  letter-spacing: 1.12px;
-
-  &.secondary {
-    background: transparent;
-    border-color: var(--color-red);
-  }
-}
 </style>
