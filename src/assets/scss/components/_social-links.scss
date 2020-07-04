@@ -1,0 +1,30 @@
+.social {
+    &__list {
+        &-item {
+            a {
+                display: inline-block;
+                vertical-align: bottom;
+                width: 30px;
+                height: 30px;
+                text-decoration: none;
+
+                span[class^="icon"] {
+                    display: block;
+                    color: #fff;
+                    font-size: 25px;
+                    transform: rotate(0) scale(1);
+                    transform-origin: center;
+                    transition: transform 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    backface-visibility: hidden;
+                }
+
+                &:hover,
+                &:focus {
+                    span[class^="icon"] {
+                        transform: rotate(20deg) scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+}
