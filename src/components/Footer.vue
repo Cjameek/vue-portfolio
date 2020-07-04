@@ -3,7 +3,7 @@
     <div class="footer__sub-footer">
       <div class="footer__copy">&copy; {{ getCurrentYear }} Cody Meek</div>
       <div class="footer__social">
-        <SocialLinks parentClass="footer" />
+        <SocialLinks />
       </div>
       <div class="footer__scroll">
         <button
