@@ -3,6 +3,11 @@
         background-color: #000;
         width: 100%;
         min-height: 100vh;
+        margin-top: 134px;
         color: #fff;
+
+        h1 {
+            top: calc(50% + 134px);
+        }
     }
 }
