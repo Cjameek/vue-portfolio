@@ -1,6 +1,9 @@
 <template>
   <div class="hero hero__wrapper">
-    <h1 class="abs-center">{{ msg }}</h1>
+    <div class="abs-center">
+      <h1>{{ title }}</h1>
+      <h2>{{ subtitle }}</h2>
+    </div>
   </div>
 </template>
 
@@ -9,7 +12,8 @@ export default {
   name: "Hero",
   data() {
     return {
-      msg: "This is a test message"
+      title: "Hey, my name is Cody Meek",
+      subtitle: "But if you got this far, you probably already knew that..."
     };
   }
 };
