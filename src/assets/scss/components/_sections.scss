@@ -1,8 +1,12 @@
 section {
     max-width: 1140px;
     margin: auto;
-    padding: 50px 100px;
+    padding: 50px;
     text-align: left;
+
+    @media screen and (min-width: 900px){
+        padding: 50px 100px;
+    }
 
     p {
         font-size: 20px;
