@@ -43,9 +43,17 @@ export default {
 
 <style lang="scss">
 .about {
+  @media screen and (min-width: 900px) {
+    padding-top: 145px;
+  }
   &__container {
     display: flex;
     flex-direction: column;
+    padding-top: 45px;
+
+    @media screen and (min-width: 900px) {
+      padding-top: 75px;
+    }
   }
 
   &__content {
@@ -57,11 +65,18 @@ export default {
     flex-wrap: wrap;
     align-items: center;
 
-    @media screen and (min-width: 550px) {
+    @media screen and (min-width: 900px) {
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: center;
       justify-content: space-between;
+    }
+  }
+
+  &__title {
+    transform: rotate(-15deg) scale(1) translateY(0);
+    @media screen and (min-width: 900px) {
+      transform: rotate(-15deg) scale(1.5) translateY(20px);
     }
   }
 
@@ -75,19 +90,21 @@ export default {
       color: var(--color-blue);
     }
 
-    @media screen and (max-width: 549px) {
+    @media screen and (max-width: 899px) {
       text-align: center;
     }
   }
 
   &__divider {
+    position: relative;
+    z-index: -1;
     background-color: var(--color-green);
     display: block;
     width: 100px;
     height: 3px;
     margin: 45px 0;
 
-    @media screen and (min-width: 550px) {
+    @media screen and (min-width: 900px) {
       width: 3px;
       height: 100px;
       margin: 0;
@@ -105,6 +122,7 @@ export default {
     display: block;
     transform: skew(10deg, 10deg) translateX(60px);
     box-shadow: inset 10px 10px 0 0 var(--color-blue);
+    opacity: 1;
   }
 
   &__image {
@@ -114,7 +132,9 @@ export default {
   }
 
   &__intro {
-    @media screen and (min-width: 550px) {
+    position: relative;
+    z-index: 1;
+    @media screen and (min-width: 900px) {
       max-width: 550px;
     }
   }
