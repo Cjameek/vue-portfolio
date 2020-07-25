@@ -2,12 +2,16 @@
     &__wrapper {
         background-color: #000;
         width: 100%;
-        min-height: 100vh;
+        min-height: 600px;
         margin-top: 134px;
         color: #fff;
+    }
 
-        h1 {
-            top: calc(50% + 134px);
-        }
+    &__title {
+        top: calc(50% + 134px);
+    }
+
+    &__subtitle {
+        font-weight: 300;
     }
 }
