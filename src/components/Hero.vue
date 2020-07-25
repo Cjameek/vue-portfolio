@@ -1,6 +1,6 @@
 <template>
   <div class="hero hero__wrapper">
-    <div class="abs-center">
+    <div class="hero__content abs-center">
       <h1 class="hero__title">{{ title }}</h1>
       <h2 class="hero__subtitle">{{ subtitle }}</h2>
     </div>
