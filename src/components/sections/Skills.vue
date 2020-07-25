@@ -3,9 +3,10 @@
     <h2 class="skills__subtitle">This should be fun</h2>
     <ul class="skills__list">
       <li
+        v-for="(skill, index) in skills"
         class="skills__list-item"
-        v-for="skill in skills"
         :key="createSkillsIcons(skill.name)"
+        :data-index="index"
       >
         <div class="skills__list-item--inner">
           <span class="skills__list-item--description">{{ skill.name }}</span>
@@ -88,12 +89,23 @@ export default {
     rotateRing: function() {
       const ring = document.querySelector(".skills__list");
       return (ring.style.transform = `rotate(${360 / this.skills.length}deg)`);
+    },
+    cssRingVars: function() {
+      let root = document.documentElement;
+
+      for (var i = 0; i < this.skills.length; i++) {
+        root.style.setProperty(
+          `--ring-pos-${i}`,
+          `${(360 / this.skills.length) * i}`
+        );
+      }
     }
   },
   mounted() {
     this.createRing();
     this.reverseInsideRing();
     this.rotateRing();
+    this.cssRingVars();
   }
 };
 </script>
@@ -156,17 +168,6 @@ export default {
         overflow: hidden;
         pointer-events: none;
       }
-
-      // @for $i from 1 through 11 {
-      //   $calculate: (32.73 * $i) + deg;
-      //   $reverse: ((32.73 * $i) - (32.72)) + deg;
-      //   &:nth-child(#{$i}) {
-      //     transform: rotate($calculate) translate(300px);
-      //   }
-      //   &:nth-child(#{$i}) &--inner {
-      //     transform: rotate($reverse);
-      //   }
-      // }
     }
   }
 }
