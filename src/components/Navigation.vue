@@ -26,7 +26,7 @@ export default {
           name: "About"
         },
         {
-          name: "Experience"
+          name: "Skills"
         },
         {
           name: "Projects"
