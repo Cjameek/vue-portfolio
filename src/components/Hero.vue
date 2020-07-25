@@ -1,8 +1,8 @@
 <template>
   <div class="hero hero__wrapper">
     <div class="abs-center">
-      <h1>{{ title }}</h1>
-      <h2>{{ subtitle }}</h2>
+      <h1 class="hero__title">{{ title }}</h1>
+      <h2 class="hero__subtitle">{{ subtitle }}</h2>
     </div>
   </div>
 </template>
