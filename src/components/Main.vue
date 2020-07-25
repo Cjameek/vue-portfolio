@@ -2,6 +2,22 @@
   <main class="primary-content">
     <Header />
     <Hero />
+    <Section
+      :class="`${post.uid}`"
+      v-for="(post, index) in posts"
+      :key="post.uid"
+      :contentBody="post.data"
+      :sectionShow="post.uid"
+    >
+      <h1 :class="`${post.uid}__title`" slot="sectionTitle">
+        {{ index + 1 }}. {{ post.data.title[0].text }}
+      </h1>
+      <!-- <div :class="`${post.uid}__content`" slot="sectionContent">
+        <p v-for="(d, index) in post.data.description" :key="index">
+          {{ d.text }}
+        </p>
+      </div> -->
+    </Section>
     <Footer />
   </main>
 </template>
@@ -10,12 +26,14 @@
 import Header from "./Header";
 import Hero from "./Hero";
 import Footer from "./Footer";
+import Section from "./Section";
 import axios from "axios";
 
 export default {
   components: {
     Header,
     Hero,
+    Section,
     Footer
   },
   name: "Main",
