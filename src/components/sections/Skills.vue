@@ -37,9 +37,9 @@ export default {
         {
           name: "Adobe Illustrator"
         },
-        {
-          name: "mySQL"
-        },
+        // {
+        //   name: "mySQL"
+        // },
         {
           name: "Wordpress"
         },
@@ -65,47 +65,46 @@ export default {
     };
   },
   methods: {
+    rotation: function() {
+      return 360 / this.skills.length;
+    },
     createSkillsIcons: function(name) {
       return name.replace(/\s/g, "").toLowerCase();
     },
-    createRing: function() {
+    createOuterRing: function() {
       const items = document.querySelectorAll(".skills__list-item");
       items.forEach((item, index) => {
-        return (item.style.transform = `rotate(${(360 / this.skills.length) *
+        return (item.style.transform = `rotate(${this.rotation() *
           index}deg) translate(-250px)`);
       });
     },
-    reverseInsideRing: function() {
+    createInnerRing: function() {
       const items = document.querySelectorAll(".skills__list-item");
       const reverseItems = Object.assign([], items).reverse();
       reverseItems.forEach((item, index) => {
         const innerWrap = item.querySelector(".skills__list-item--inner");
 
-        return (innerWrap.style.transform = `rotate(${(360 /
-          this.skills.length) *
+        return (innerWrap.style.transform = `rotate(${this.rotation() *
           index}deg)`);
       });
     },
-    rotateRing: function() {
-      const ring = document.querySelector(".skills__list");
-      return (ring.style.transform = `rotate(${360 / this.skills.length}deg)`);
-    },
-    cssRingVars: function() {
+    createRingCSSVars: function() {
       let root = document.documentElement;
 
       for (var i = 0; i < this.skills.length; i++) {
-        root.style.setProperty(
-          `--ring-pos-${i}`,
-          `${(360 / this.skills.length) * i}`
-        );
+        root.style.setProperty(`--ring-pos-${i}`, `${this.rotation() * i}`);
       }
+    },
+    rotateRing: function() {
+      const ring = document.querySelector(".skills__list");
+      return (ring.style.transform = `rotate(${this.rotation()}deg)`);
     }
   },
   mounted() {
-    this.createRing();
-    this.reverseInsideRing();
+    this.createOuterRing();
+    this.createInnerRing();
+    this.createRingCSSVars();
     this.rotateRing();
-    this.cssRingVars();
   }
 };
 </script>
